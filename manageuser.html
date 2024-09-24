@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>Manage Users - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="tit.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <i class="fas fa-user-shield text-red-500 text-2xl mr-2"></i>
+            <span class="text-xl font-bold">Admin Dashboard</span>
+        </div>
+        <div>
+            <a href="admindash.html" class="text-white mr-4">Dashboard</a>
+            <a href="index.html" class="text-white">Logout</a>
+        </div>
+    </nav>
+    <div class="p-8">
+        <h1 class="text-3xl font-bold mb-6">Manage Users</h1>
+        <div class="mb-4 flex justify-between items-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="fas fa-user-plus mr-2"></i> Add User
+            </button>
+            <input type="text" placeholder="Search users..." class="px-4 py-2 rounded bg-gray-800 text-white">
+        </div>
+        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">ID</th>
+                        <th class="py-2 px-4 border-b">Name</th>
+                        <th class="py-2 px-4 border-b">Email</th>
+                        <th class="py-2 px-4 border-b">Role</th>
+                        <th class="py-2 px-4 border-b">Status</th>
+                        <th class="py-2 px-4 border-b">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">John Doe</td>
+                        <td class="py-2 px-4 border-b">john.doe@example.com</td>
+                        <td class="py-2 px-4 border-b">Admin</td>
+                        <td class="py-2 px-4 border-b">
+                            <span class="bg-green-500 text-white px-2 py-1 rounded">Active</span>
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">2</td>
+                        <td class="py-2 px-4 border-b">Jane Smith</td>
+                        <td class="py-2 px-4 border-b">jane.smith@example.com</td>
+                        <td class="py-2 px-4 border-b">Editor</td>
+                        <td class="py-2 px-4 border-b">
+                            <span class="bg-red-500 text-white px-2 py-1 rounded">Inactive</span>
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Repeat for each user -->
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-6">
+            <h2 class="text-2xl font-bold mb-4">User Details</h2>
+            <div class="bg-white text-black p-6 rounded-lg shadow-md">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700">Name</label>
+                        <input type="text" class="w-full px-4 py-2 rounded bg-gray-200" value="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded bg-gray-200" value="john.doe@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Role</label>
+                        <select class="w-full px-4 py-2 rounded bg-gray-200">
+                            <option>Admin</option>
+                            <option>Editor</option>
+                            <option>User</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Status</label>
+                        <select class="w-full px-4 py-2 rounded bg-gray-200">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">
+                        <i class="fas fa-save mr-2"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>Manage Content - Wellbeing and Health Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="tit.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <i class="fas fa-user-shield text-red-500 text-2xl mr-2"></i>
+            <span class="text-xl font-bold">Admin Dashboard</span>
+        </div>
+        <div>
+            <a href="admindash.html" class="text-white mr-4">Dashboard</a>
+            <a href="index.html" class="text-white">Logout</a>
+        </div>
+    </nav>
+    <div class="p-8">
+        <h1 class="text-3xl font-bold mb-6">Manage Content</h1>
+        <div class="mb-4 flex justify-between items-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="fas fa-plus mr-2"></i> Add Content
+            </button>
+            <input type="text" placeholder="Search content..." class="px-4 py-2 rounded bg-gray-800 text-white">
+        </div>
+        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">ID</th>
+                        <th class="py-2 px-4 border-b">Title</th>
+                        <th class="py-2 px-4 border-b">Author</th>
+                        <th class="py-2 px-4 border-b">Date</th>
+                        <th class="py-2 px-4 border-b">Status</th>
+                        <th class="py-2 px-4 border-b">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">10 Tips for a Healthier Life</td>
+                        <td class="py-2 px-4 border-b">Dr. John Doe</td>
+                        <td class="py-2 px-4 border-b">2023-10-01</td>
+                        <td class="py-2 px-4 border-b">
+                            <span class="bg-green-500 text-white px-2 py-1 rounded">Published</span>
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">2</td>
+                        <td class="py-2 px-4 border-b">The Benefits of Regular Exercise</td>
+                        <td class="py-2 px-4 border-b">Jane Smith</td>
+                        <td class="py-2 px-4 border-b">2023-09-25</td>
+                        <td class="py-2 px-4 border-b">
+                            <span class="bg-yellow-500 text-white px-2 py-1 rounded">Draft</span>
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Repeat for each content item -->
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-6">
+            <h2 class="text-2xl font-bold mb-4">Content Details</h2>
+            <div class="bg-white text-black p-6 rounded-lg shadow-md">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700">Title</label>
+                        <input type="text" class="w-full px-4 py-2 rounded bg-gray-200" value="10 Tips for a Healthier Life">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Author</label>
+                        <input type="text" class="w-full px-4 py-2 rounded bg-gray-200" value="Dr. John Doe">
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-gray-700">Content</label>
+                        <textarea class="w-full px-4 py-2 rounded bg-gray-200" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Status</label>
+                        <select class="w-full px-4 py-2 rounded bg-gray-200">
+                            <option>Published</option>
+                            <option>Draft</option>
+                            <option>Archived</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Date</label>
+                        <input type="date" class="w-full px-4 py-2 rounded bg-gray-200" value="2023-10-01">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">
+                        <i class="fas fa-save mr-2"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<html>
+<head>
+    <title>WellbeingMate - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="tit.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-roboto">
+    <nav class="bg-gray-800 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <i class="fas fa-heartbeat text-green-500 text-2xl mr-2"></i>
+            <span class="text-xl font-bold">WellbeingMate</span>
+        </div>
+        <div class="space-x-4">
+            <a href="home.html" class="text-white">Home</a>
+            <a href="userDash.html" class="text-white">Dashboard</a>
+            <a href="settings.html" class="text-white">Settings</a>
+            <a href="profile.html" class="text-white">Profile</a>
+            <a href="chatbot.html" class="text-white">Chatbot Assistant</a>
+        </div>
+    </nav>
+    <header class="bg-gray-800 text-center py-20">
+        <h1 class="text-5xl font-bold mb-4">Welcome to WellbeingMate</h1>
+        <p class="text-xl mb-8">Your ultimate companion for a healthier and happier life</p>
+    </header>
+    <section class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Today's Summary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Steps</h3>
+                    <p>Today's Steps: 8,546</p>
+                    <canvas id="stepsChart"></canvas>
+                </div>
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Calories Burned</h3>
+                    <p>Today's Calories: 450 kcal</p>
+                    <canvas id="caloriesChart"></canvas>
+                </div>
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Active Minutes</h3>
+                    <p>Today's Active Minutes: 45</p>
+                    <canvas id="activeMinutesChart"></canvas>
+                </div>
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Screen Time</h3>
+                    <p>Today's Screen Time: 5 hrs 30 mins</p>
+                    <canvas id="screenTimeChart"></canvas>
+                </div>
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Breaks</h3>
+                    <p>Number of Breaks: 3</p>
+                    <p>Total Break Time: 30 mins</p>
+                    <canvas id="breaksChart"></canvas>
+                </div>
+                <div class="bg-white text-black p-6 sha rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Social Interaction</h3>
+                    <p>Video Calls: 2</p>
+                    <p>Messages Sent: 15</p>
+                    <canvas id="socialInteractionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-800 py-8 text-center">
+        <p>&copy; 2023 WellbeingMate. All rights reserved.</p>
+    </footer>
+    <script>
+        // Steps Chart
+        const stepsCtx = document.getElementById('stepsChart').getContext('2d');
+        const stepsChart = new Chart(stepsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Steps',
+                    data: [7000, 8000, 8500, 9000, 7500, 8000, 8546],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Calories Chart
+        const caloriesCtx = document.getElementById('caloriesChart').getContext('2d');
+        const caloriesChart = new Chart(caloriesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Calories Burned',
+                    data: [400, 450, 500, 550, 600, 450, 450],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Active Minutes Chart
+        const activeMinutesCtx = document.getElementById('activeMinutesChart').getContext('2d');
+        const activeMinutesChart = new Chart(activeMinutesCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Active', 'Inactive'],
+                datasets: [{
+                    label: 'Active Minutes',
+                    data: [45, 1440 - 45],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Screen Time Chart
+        const screenTimeCtx = document.getElementById('screenTimeChart').getContext('2d');
+        const screenTimeChart = new Chart(screenTimeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Screen Time (hrs)',
+                    data: [4, 5, 6, 5, 4, 5, 5.5],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Breaks Chart
+        const breaksCtx = document.getElementById('breaksChart').getContext('2d');
+        const breaksChart = new Chart(breaksCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Breaks',
+                    data: [
+                        { x: 1, y: 10 },
+                        { x: 2, y: 15 },
+                        { x: 3, y: 5 }
+                    ],
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Social Interaction Chart
+        const socialInteractionCtx = document.getElementById('socialInteractionChart').getContext('2d');
+        const socialInteractionChart = new Chart(socialInteractionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Video Calls', 'Messages Sent'],
+                datasets: [{
+                    label: 'Social Interaction',
+                    data: [2, 15],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

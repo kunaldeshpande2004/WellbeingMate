@@ -1,0 +1,16 @@
+.sha{
+    box-shadow: 6px 6px 6px 6px rgb(0, 0, 0);
+}
+.sha:hover{
+    background-color: rgb(201, 201, 201);
+    transform: scale(1.015);
+    cursor: pointer;
+}
+.bha{
+    box-shadow: 6px 6px 6px 6px rgb(0, 0, 0);
+}
+.bha:hover{
+    background-color: rgb(31, 31, 68);
+    transform: scale(1.015);
+    cursor: pointer;
+}
